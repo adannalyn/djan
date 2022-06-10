@@ -2,11 +2,13 @@ from django.shortcuts import render
 
 # Create your views here.
 
-def polls(request):
-	return render(request, "polls.html")
+def home(request):
+	return render(request, "index.html")
 
-def register(request):
-	return render(request, "Register.html")
+def about(request):
+	return render(request, "about.html")
 
-def vote(request):
-	return render(request, "vote.html")
+def contact(request):
+	return render(request, "contact.html")
+def services(request):
+    return render(request, "services.html")
