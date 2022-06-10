@@ -1,10 +1,13 @@
 from django.urls import path
-from .views import polls, register, vote
+from .views import djan, about, contact, services
 
 app_name = "djan"
 
 urlpatterns = [
-    path("home/home", polls),
-    path("home/about/", register),
-    path("home/contact", vote)
+    
+    path("", djan, name="djanView"),
+    path("about/", about, name="aboutView"),
+    path("contact/", contact, name="contactView"),
+    path("services/", services, name="servicesView")
+    
 ]
