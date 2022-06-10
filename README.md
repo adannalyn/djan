@@ -1,6 +1,3 @@
-
-Django-Python Application :
-Create an application of your choice within your project folder. Give this application three(3) views and perform a routing (URL mapping) to those views. Each of these views must render a HTML file.
 6.1. Create a Django model for People, Address, Doctor, Product, and Bio within any of your app.
 Use an appropriate database relationship, and create a relationship for the following models:
 People - Address
