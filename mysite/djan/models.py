@@ -10,7 +10,7 @@ class People(models.Model):
 
 class Doctor(models.Model):
     patients = models.OneToOneField(
-        Place,
+        People,
         on_delete=models.CASCADE,
         primary_key=True,
     )
@@ -21,13 +21,13 @@ class Doctor(models.Model):
         return "%s the doctor at" % self.place.name
 
 class Address(models.Model):
-    local = models.ForeignKey(Restaurant, on_delete=models.CASCADE)
+    local = models.ForeignKey(Doctor, on_delete=models.CASCADE)
     foreign = models.CharField(max_length=50)
 
     def __str__(self):
         return "%s the address at %s" % (self.name, self.restaurant)
 class Product(models.Model):
-    sales = models.ForeignKey(Restaurant, on_delete=models.CASCADE)
+    sales = models.ForeignKey(Address, on_delete=models.CASCADE)
     promo = models.CharField(max_length=50)
 
     def __str__(self):
