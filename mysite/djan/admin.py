@@ -6,3 +6,5 @@ admin.site.register(People)
 admin.site.register(Doctor)
 admin.site.register(Address)
 admin.site.register(Product)
+
+
