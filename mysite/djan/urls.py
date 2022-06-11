@@ -10,8 +10,5 @@ urlpatterns = [
     path("contact/", contact, name="contactView"),
     path("services/", services, name="servicesView")
     
-<<<<<<< HEAD
+
 ]
-=======
-]
->>>>>>> 0873b84cb8a08437bdf6362ac1f1860c06a5014a
