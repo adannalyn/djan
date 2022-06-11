@@ -31,4 +31,8 @@ class Product(models.Model):
     promo = models.CharField(max_length=50)
 
     def __str__(self):
+<<<<<<< HEAD
         return "%s the product available %s" % (self.name, self.doctor)
+=======
+        return "%s the product available %s" % (self.name, self.doctor)
+>>>>>>> 0873b84cb8a08437bdf6362ac1f1860c06a5014a
