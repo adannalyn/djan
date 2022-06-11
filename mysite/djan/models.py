@@ -27,8 +27,5 @@ class Address(models.Model):
     def __str__(self):
         return "%s the address at %s" % (self.name, self.doctor)
 class Product(models.Model):
-    sales = models.ForeignKey(Address, on_delete=models.CASCADE)
-    promo = models.CharField(max_length=50)
-
-    def __str__(self):
-        return "%s the product available %s" % (self.name, self.doctor)
+    productname = models.CharField(max_length=200,default="")
+    price = models.DecimalField(max_digits=5,decimal_places=2, default=0)
