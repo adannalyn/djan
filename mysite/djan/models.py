@@ -1,12 +1,12 @@
 from django.db import models
 
 class People(models.Model):
-    name = models.CharField(max_length=50)
-    address = models.CharField(max_length=80)
-    occupation = models.CharField(max_length=200)
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)
+    email = models.EmailField()
 
     def __str__(self):
-        return "%s the people" % self.name
+        return "%s %s" % (self.first_name, self.last_name)
 
 class Doctor(models.Model):
     patients = models.OneToOneField(
@@ -25,10 +25,10 @@ class Address(models.Model):
     foreign = models.CharField(max_length=50)
 
     def __str__(self):
-        return "%s the address at %s" % (self.name, self.restaurant)
+        return "%s the address at %s" % (self.name, self.doctor)
 class Product(models.Model):
     sales = models.ForeignKey(Address, on_delete=models.CASCADE)
     promo = models.CharField(max_length=50)
 
     def __str__(self):
-        return "%s the product available %s" % (self.name, self.restaurant)
+        return "%s the product available %s" % (self.name, self.doctor)
