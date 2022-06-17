@@ -35,17 +35,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="row">
 				<div class="col-md-4 logo text-left">
 					<a class="navbar-brand" href="index.html">
-						<i class="fab fa-linode"></i> Weblog</a>
+						<i class="fab fa-linode"></i> XYZ Hotel</a>
 				</div>
 				<div class="col-md-4 top-forms text-center mt-lg-3 mt-md-1 mt-0">
 					<span>Welcome Back!</span>
+					{% if user.is_authenticated %}
+					<span>
+						<a href="{% url 'accounts:logoutView' %}">
+							<i class="far fa-user"></i> Logout</a>
+					</span>
+					{% else %}
 					<span class="mx-lg-4 mx-md-2  mx-1">
-						<a href="login.html">
+						<a href="{% url 'accounts:loginView' %}">
 							<i class="fas fa-lock"></i> Sign In</a>
 					</span>
+					{% endif %}
 					<span>
-						<a href="register.html">
-							<i class="far fa-user"></i> Register</a>
+						<a href="{% url 'accounts:signupView' %}">
+							<i class="far fa-user"></i> Signup</a>
 					</span>
 				</div>
 				<div class="col-md-4 log-icons text-right">

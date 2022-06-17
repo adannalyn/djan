@@ -15,7 +15,6 @@ class Doctor(models.Model):
         primary_key=True,
     )
     can_see_patients = models.BooleanField(default=False)
-    can_see_patients = models.BooleanField(default=False)
 
     def __str__(self):
         return "%s the doctor at" % self.place.name

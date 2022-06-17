@@ -13,7 +13,6 @@ def contact(request):
 	return render(request, "djan/contact.html")
 
 def services(request):
-
     return render(request, "djan/services.html")
 
 def products(request):
