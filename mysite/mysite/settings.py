@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'accounts.apps.AccountsConfig',
     'djan.apps.DjanConfig',
-    'blog.apps.BlogConfig',
     'xyzhotel.apps.XyzhotelConfig',
     'crispy_forms',
 ]

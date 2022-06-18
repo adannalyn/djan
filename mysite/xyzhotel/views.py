@@ -5,17 +5,17 @@ from django.contrib import messages
 from django.http import HttpResponse
 import datetime
 def index(request):
-    return render(request,'booking/index.html',{})
+    return render(request,'xyzhotel/booking/index.html',{})
 def contact(request):
     if request.method=="GET":
-     return render(request,"contact/contact.html",{})
+     return render(request,"xyzhotel/contact/contact.html",{})
     else:
      username=request.POST['name']
      occupation=request.POST['message']
      email=request.POST['email']
-     data=Contact(name=username,message=message,email=ema)
+     data=Contact(name=username,message=message,email=email)
      data.save()
-     return render(request,"contact/contact.html",{'message':'Thank you for contacting us.'})
+     return render(request,"xyzhotel/contact/contact.html",{'message':'Thank you for contacting us.'})
 def book(request):
     if request.method=="POST":
         start_date=request.POST['start_date']
@@ -27,7 +27,7 @@ def book(request):
         no_of_nights=(end_date-start_date).days
         data=Rooms.objects.filter(is_available=True)
         request.session['no_of_nights']=no_of_nights
-        return render(request,'booking/book.html',{'data':data})
+        return render(request,'xyzhotelbooking/book.html',{'data':data})
     else:
         return redirect('index')
 def book_now(request,id):
